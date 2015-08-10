@@ -1,12 +1,31 @@
 class UsersController < ApplicationController
+
+  before_filter :authorize, only: [:show]
   def new
-    @user = User.new
+    # redirect user if already logged in
+    if current_user
+      redirect_to profile_path
+    else
+      @user = User.new
+      render :new
+    end
   end
 
   def create
-    user = User.create(user_params)
-    session[:user_id] = user.id
-    redirect_to user_path(user)
+    # redirect user if already logged in
+    if current_user
+      redirect_to profile_path
+    else
+      user = User.new(user_params)
+      if user.save
+        session[:user_id] = user.id
+        flash[:notice] = "Successfully signed up."
+        redirect_to profile_path
+      else
+        flash[:error] = user.errors.full_messages.join(', ')
+        redirect_to signup_path
+      end
+    end
   end
 
   def update
@@ -22,7 +41,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
     render :show
   end
 
