@@ -4,14 +4,25 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :posts
+
 end
 
-#        Prefix Verb URI Pattern              Controller#Action
-#     users_new GET  /users/new(.:format)     users#new
-#  users_create GET  /users/create(.:format)  users#create
-#  users_update GET  /users/update(.:format)  users#update
-#    users_edit GET  /users/edit(.:format)    users#edit
-# users_destroy GET  /users/destroy(.:format) users#destroy
-#   users_index GET  /users/index(.:format)   users#index
-#    users_show GET  /users/show(.:format)    users#show
-#          root GET  /                        pages#index
+#    Prefix Verb   URI Pattern               Controller#Action
+#      root GET    /                         pages#index
+#     users GET    /users(.:format)          users#index
+#           POST   /users(.:format)          users#create
+#  new_user GET    /users/new(.:format)      users#new
+# edit_user GET    /users/:id/edit(.:format) users#edit
+#      user GET    /users/:id(.:format)      users#show
+#           PATCH  /users/:id(.:format)      users#update
+#           PUT    /users/:id(.:format)      users#update
+#           DELETE /users/:id(.:format)      users#destroy
+#     posts GET    /posts(.:format)          posts#index
+#           POST   /posts(.:format)          posts#create
+#  new_post GET    /posts/new(.:format)      posts#new
+# edit_post GET    /posts/:id/edit(.:format) posts#edit
+#      post GET    /posts/:id(.:format)      posts#show
+#           PATCH  /posts/:id(.:format)      posts#update
+#           PUT    /posts/:id(.:format)      posts#update
+#           DELETE /posts/:id(.:format)      posts#destroy
