@@ -39,8 +39,6 @@
 			<%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-info'}" %>
 		<% end %>
 		<%= yield %>
-		<hr>
-		<p>Current user: <%= current_user.username if current_user %></p>
 	</div>
 
 	<%= javascript_include_tag :application %>
