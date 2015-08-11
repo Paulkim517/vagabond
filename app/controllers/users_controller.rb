@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     if current_user
       redirect_to profile_path
     else
-      @user = User.new
       render :new
     end
   end

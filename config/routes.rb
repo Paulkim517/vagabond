@@ -6,24 +6,19 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new", as: :signup
   get "/profile", to: "users#show", as: :profile
 
-  resources :posts
-
   resources :sessions, only: [:create]
   get "/login", to: "sessions#new", as: :login
   get "/logout", to: "sessions#destroy", as: :logout
+
+  resources :posts
 
 end
 
 #    Prefix Verb   URI Pattern               Controller#Action
 #      root GET    /                         pages#index
-#     users GET    /users(.:format)          users#index
-#           POST   /users(.:format)          users#create
-#  new_user GET    /users/new(.:format)      users#new
-# edit_user GET    /users/:id/edit(.:format) users#edit
-#      user GET    /users/:id(.:format)      users#show
-#           PATCH  /users/:id(.:format)      users#update
-#           PUT    /users/:id(.:format)      users#update
-#           DELETE /users/:id(.:format)      users#destroy
+#     users POST   /users(.:format)          users#create
+#    signup GET    /signup(.:format)         users#new
+#   profile GET    /profile(.:format)        users#show
 #     posts GET    /posts(.:format)          posts#index
 #           POST   /posts(.:format)          posts#create
 #  new_post GET    /posts/new(.:format)      posts#new
@@ -32,3 +27,6 @@ end
 #           PATCH  /posts/:id(.:format)      posts#update
 #           PUT    /posts/:id(.:format)      posts#update
 #           DELETE /posts/:id(.:format)      posts#destroy
+#  sessions POST   /sessions(.:format)       sessions#create
+#     login GET    /login(.:format)          sessions#new
+#    logout GET    /logout(.:format)         sessions#destroy
