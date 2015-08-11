@@ -1,8 +1,11 @@
-<h1>Profile Page</h1>
-<div>
-	<p><%= current_user.email %></p>
+<div class="jumbotron">
+	<h1>Your Posts</h1>
+	<div>
+		<p>Welcome back <%= current_user.username %></p>
+	</div>
 </div>
 
+<div class="container">
 <% if current_user.posts.any? %>
 	<h3>My Posts</h3>
 	<% current_user.posts.each do |post|  %>
@@ -12,6 +15,8 @@
 	<% end %>
 <% else %>
 	<h4>You don't have any posts!</h4>
-	<%= link_to "Add A Post", new_post_path %>
+	<br>
+	<%= link_to "Add A Post", new_post_path, class: "btn btn-success" %>
 <% end %>
+</div>
 
