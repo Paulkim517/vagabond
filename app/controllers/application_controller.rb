@@ -24,4 +24,9 @@ class ApplicationController < ActionController::Base
   	current_user != nil
   end
 
+  def index
+    render :index
+    @post = Post.all
+  end
+
 end
