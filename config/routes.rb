@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'cities/index'
+
+  get 'cities/show'
+
   root "pages#index"
 
   resources :users, only: [:create]
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy", as: :logout
 
   resources :posts
+  
+  resources :cities, only: [:index, :show]
   
 
 end
