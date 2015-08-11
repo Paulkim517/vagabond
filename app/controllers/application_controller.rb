@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   
-  # allows us to use `current_user` in views
+  # allows us to use `current_user` and 'logged_in?' in views
   helper_method :current_user, :logged_in?
 
   # used to require logging in before certain actions
