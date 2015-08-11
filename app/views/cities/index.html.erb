@@ -1,0 +1,26 @@
+<% if @cities.any? %>
+			<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h2>Whtever</h2>
+				<hr>
+			</div>
+		</div>
+	</div>
+
+	<% @cities.each do |city|  %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<p>
+					<%= city.name %>
+					<!-- <img src="../assets/images/<%= city.image %>"> -->
+					<%= image_tag "sf.jpg" %>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<% end %>
+
+<% end %>

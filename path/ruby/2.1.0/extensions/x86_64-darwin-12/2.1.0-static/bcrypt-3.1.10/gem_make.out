@@ -15,3 +15,4 @@ ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 make "DESTDIR=" install
 /usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20150811-29292-1hq5uej
 installing default bcrypt_ext libraries
+
