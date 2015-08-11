@@ -4,7 +4,8 @@
 	<div class="text-center">
 		<h1>Your Posts</h1>
 		<div>
-			<p>Welcome back <%= current_user.username %></p>		
+			<p>Welcome back <%= current_user.username %></p>
+			<%= image_tag current_user.avatar.url(:medium) %>		
 		</div>
 	</div>
 </div>

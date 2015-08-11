@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    puts "THESE ARE THE PARAMS"
+    puts params
     # redirect user if already logged in
     if current_user
       redirect_to profile_path
@@ -45,6 +47,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :location)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :location, :avatar)
     end
 end
