@@ -10,11 +10,18 @@
 	<div class="row">
 		<div class = "col-md-12">
 			<% if current_user.posts.any? %>
+				<div class="container">
+					<div class="row">
+							<div class="col-md-8 col-md-offset-2">
+								<h2>My Posts</h2>
+								<br>	
+							</div>
+					</div>
+				</div>
 				<% current_user.posts.each do |post|  %>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-						<h2>My Posts</h2>
 							<div class="panel panel-warning">
 								<div class="panel-heading">
 									<h3 class="panel-title">Created by: <%= post.user.username %></h3>
