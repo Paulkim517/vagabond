@@ -1,2 +1,16 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    	<h1>Vagabond <%= @post.id %></h1>
+    	<br>
+    </div>
+			<div class="col-md-8 col-md-offset-2">
+       <div class="well">
+		    Title: <%= @post.title %> <br>
+		    Body: <%= @post.body %> <br>
+			 </div>
+       <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-primary" %>
+       <%= link_to "Delete Post",  @post, method: :delete, class: "btn btn-danger"  %>
+			</div>
+  </div>
+</div>
