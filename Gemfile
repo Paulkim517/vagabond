@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+#aws
+gem 'aws-sdk', '~> 1.6'
+
+#s3 bucket
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Paperclip for images, avatars etc
 gem "paperclip", "~> 4.3"
 

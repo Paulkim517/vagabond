@@ -6,6 +6,11 @@ class CitiesController < ApplicationController
 
   def show
   	@city = City.friendly.find(params[:id])
-  	render :show
+  	
+  	respond_to do |f| 
+  	f.html {render :show}
+  	f.json {render :json => @city}
+ 	  end
+  	
   end
 end
