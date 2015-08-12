@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    @city = City.friendly.find(params[:city_id])
+    # @city = City.find(params[:city_id])
     @post.city_id = params[:city_id]
     if @post.save
       redirect_to city_path(@city)
