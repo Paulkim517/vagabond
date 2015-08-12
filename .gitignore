@@ -11,3 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
+
+path/ruby/2.2.0

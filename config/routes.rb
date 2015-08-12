@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'cities/index'
-
-  get 'cities/show'
-
-  root "pages#index"
+  root "cities#index"
 
   resources :users, only: [:create]
   get "/signup", to: "users#new", as: :signup
