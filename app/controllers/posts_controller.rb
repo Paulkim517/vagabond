@@ -14,7 +14,12 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
-    redirect_to post_path(@post)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      flash[:error] = @post.errors.full_messages.join(', ')
+      redirect_to new_post_path
+    end
   end
 
   def show
