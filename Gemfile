@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
 # Paperclip for images, avatars etc
-  gem "paperclip", "~> 4.3"
+gem "paperclip", "~> 4.3"
 
+# Friendly ID
+gem "friendly_id"	
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

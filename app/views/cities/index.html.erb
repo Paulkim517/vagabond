@@ -12,11 +12,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<p>
-					<%= city.name %>
-					<!-- <img src="../assets/images/<%= city.image %>"> -->
-					<%= image_tag "sf.jpg" %>
-				</p>
+				<%= link_to("/#{city.slug}") do %>
+				  <strong><%= city.name %></strong>
+				  <%= image_tag city.image, {height: 200} %>
+				<% end %>
 			</div>
 		</div>
 	</div>

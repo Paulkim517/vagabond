@@ -3,5 +3,11 @@
 #
 # Examples:
 #
-   cities = City.create([{ name: 'San Francisco', image: "sf.jpg" }, { name: 'New Orleans', image: "sf.jpg"}, { name: 'Los Angeles', image: "sf.jpg"}, { name: 'Boston', image: "sf.jpg"}, { name: 'Austin', image: "sf.jpg"}])
+cities = City.create([
+	{ name: 'San Francisco', image: "san-francisco.jpg" },
+	{ name: 'New Orleans', image: "new-orleans.jpg"}, 
+	{ name: 'Los Angeles', image: "los-angeles.jpg"}, 
+	{ name: 'Boston', image: "boston.jpg"}, 
+	{ name: 'Austin', image: "austin.jpg"}
+])
 

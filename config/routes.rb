@@ -13,15 +13,18 @@ Rails.application.routes.draw do
   resources :posts
   
   resources :cities, only: [:index, :show]
-  
+  get "/:id", to: "cities#show"
 
 end
 
 #    Prefix Verb   URI Pattern               Controller#Action
-#      root GET    /                         pages#index
+#      root GET    /                         cities#index
 #     users POST   /users(.:format)          users#create
 #    signup GET    /signup(.:format)         users#new
 #   profile GET    /profile(.:format)        users#show
+#  sessions POST   /sessions(.:format)       sessions#create
+#     login GET    /login(.:format)          sessions#new
+#    logout GET    /logout(.:format)         sessions#destroy
 #     posts GET    /posts(.:format)          posts#index
 #           POST   /posts(.:format)          posts#create
 #  new_post GET    /posts/new(.:format)      posts#new
@@ -30,6 +33,7 @@ end
 #           PATCH  /posts/:id(.:format)      posts#update
 #           PUT    /posts/:id(.:format)      posts#update
 #           DELETE /posts/:id(.:format)      posts#destroy
-#  sessions POST   /sessions(.:format)       sessions#create
-#     login GET    /login(.:format)          sessions#new
-#    logout GET    /logout(.:format)         sessions#destroy
+#    cities GET    /cities(.:format)         cities#index
+#      city GET    /cities/:id(.:format)     cities#show
+#           GET    /:id(.:format)            cities#show
+
