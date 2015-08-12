@@ -1,19 +1,18 @@
 
 <div class="container" id="container_form">
- <%= form_for @post, :html => {:class => "form-horizontal center"} do |f| %>
-	<div class="form-group">
-		<%= f.label :title, "Title:", class: "col-sm-2 control-label" %>
-		<div class="col-sm-8">
-	    <%= f.text_field :title, class: "form-control", placeholder: "Enter title" %>
-	  </div>
-	</div>
-	<div class="form-group">
-	  <%= f.label :body, "Body:", class: "col-sm-2 control-label" %>
-	  <div class="col-sm-8">
-	    <%= f.text_area :body, class: "form-control", placeholder: "Enter your advice here"%>
-	  </div>
-	</div>
+	<%= form_for :post, url: "/cities/#{@city.id}/posts", :html => {:class => "form-horizontal center"} do |f| %>
+		<div class="form-group">
+			<%= f.label :title, "Title:", class: "col-sm-2 control-label" %>
+			<div class="col-sm-8">
+		    <%= f.text_field :title, class: "form-control", placeholder: "Enter title" %>
+		  </div>
+		</div>
+		<div class="form-group">
+		  <%= f.label :body, "Body:", class: "col-sm-2 control-label" %>
+		  <div class="col-sm-8">
+		    <%= f.text_area :body, class: "form-control", placeholder: "Enter your advice here"%>
+		  </div>
+		</div>
 			<%= f.submit "Submit", class: "btn btn-primary pull-right", id: "submit-button" %>  
- 		<% end %>
-	</div>
+ 	<% end %>
 </div>

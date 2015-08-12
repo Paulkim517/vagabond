@@ -1,7 +1,9 @@
 <h1><%= @city.name %></h1>
 <%= image_tag @city.image, {height: 500} %>
 
-<% @city.posts.each do |post|  %>
+<%= link_to "New Post", new_city_post_path(@city, @post), class: "btn btn-primary" %>
+
+<% @city.posts.each do |post| %>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
