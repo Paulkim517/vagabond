@@ -1,15 +1,26 @@
 <h1><%= @city.name %></h1>
 <%= image_tag @city.image, {height: 500} %>
-
-<% @city.posts.each do |post|  %>
+<br><br>
+<%= link_to "New Post", new_city_post_path(@city, @post), class: "btn btn-success" %>
+<br><br>
+<% @city.posts.reverse_each do |post| %>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<strong>Title: </strong><%= post.title %>
-				<br>
-				<strong>Body: </strong><%= post.body %>
-				<br>
-				<br>
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Created by: <%= post.user.username %></h3>
+					</div>
+					<div class="panel-body">
+						<p>Title: <%= post.title %> <br>Body: <%= post.body %> <br></p>
+					</div>
+					<% if post.user.id == session[:user_id] %>
+						<div class="panel-footer">
+							<%= link_to "Edit Post", edit_post_path(post), class: "btn btn-primary" %>
+							<%= link_to "Delete Post",  post, method: :delete, class: "btn btn-danger"  %>
+						</div>
+					<% end %>
+				</div>
 			</div>
 		</div>
 	</div>

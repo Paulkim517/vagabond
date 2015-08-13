@@ -9,16 +9,19 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @city = City.friendly.find(params[:city_id])
     render :new
   end
 
   def create
     @post = current_user.posts.create(post_params)
+    @city = City.friendly.find(params[:city_id])
+    @post.city_id = params[:city_id]
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to city_path(@city)
     else
       flash[:error] = @post.errors.full_messages.join(', ')
-      redirect_to new_post_path
+      redirect_to new_city_post_path
     end
   end
 
