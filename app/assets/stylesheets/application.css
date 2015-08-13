@@ -15,12 +15,13 @@
  */
 
  body {
- 	margin-top: 50px;
+ 	margin-top: 53px;
  	font-family: 'Open Sans', sans-serif;
  }
 
 a.btn {
 margin-left:10px;
+margin-right: 10px;
 }
 
 .thumbnail {
@@ -33,7 +34,7 @@ margin-left:10px;
 
 .jumbotron {
 	z-index: -1;
-	height: 300px;
+	height: 400px;
 	background-size: cover;
 	background-position: center;
 	text-align: center;
@@ -42,7 +43,7 @@ margin-left:10px;
 
 .jumbotron-overlay {
     /*z-index: -1;*/
-    height: 350px;
+    height: 450px;
     width: 100%;
     position: fixed;
     /*overflow: hidden;*/
@@ -56,6 +57,27 @@ margin-left:10px;
 	font-weight: 600;
 	color: white;
 	font-size: 80px;
-	margin-top: 55px;
-	text-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+	margin-top: 105px;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.4);
 }
+
+.navbar-thumb {
+	height: 22px;
+	width: 22px;
+}
+
+#profile-header {
+	display: inline-block;
+}
+
+#edit-profile-button {
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+

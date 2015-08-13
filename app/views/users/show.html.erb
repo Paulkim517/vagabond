@@ -1,9 +1,4 @@
 <div class="text-center">
-	<h1>Your Profile</h1>
-	<div>
-		<p>Welcome back <%= current_user.username %></p>
-		<%= image_tag current_user.avatar.url(:medium) %>		
-	</div>
 </div>
 <div class="container">
 	<div class="row">
@@ -12,7 +7,8 @@
 				<div class="container">
 					<div class="row">
 							<div class="col-md-8 col-md-offset-2">
-								<h2>My Posts</h2>
+								<h2 id="profile-header">Profile</h2>
+								<%= link_to "Edit Profile", edit_profile_path(@user), class: "btn btn-primary pull-right", id: "edit-profile-button" %>
 								<br>	
 							</div>
 					</div>
@@ -22,19 +18,15 @@
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
 							<div class="panel panel-warning">
-								<div class="panel-heading">
-									<h3 class="panel-title">Created by: <%= post.user.username %></h3>
-								</div>
 								<div class="panel-body">
 									<p>Title: <%= post.title %> <br>Body: <%= post.body %> <br></p>
-									<%= image_tag current_user.avatar.url(:thumb) %>
 								</div>
 								<% if post.user.id == session[:user_id] %>
 								<div class="panel-footer">
 									<%= link_to "Edit Post", edit_post_path(post), class: "btn btn-primary" %>
 									<%= link_to "Delete Post",  post, method: :delete, class: "btn btn-danger"  %>
-									<% end %>
 								</div>
+								<% end %>
 							</div>
 						</div>
 					</div>
@@ -49,4 +41,3 @@
 		</div>
 	</div>
 </div>
-

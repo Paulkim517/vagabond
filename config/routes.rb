@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   root "cities#index"
 
-  resources :users, only: [:create]
+  resources :users, only: [:create, :update]
   get "/signup", to: "users#new", as: :signup
   get "/profile", to: "users#show", as: :profile
+  get "/edit-profile", to: "users#edit", as: :edit_profile
 
   resources :sessions, only: [:create]
   get "/login", to: "sessions#new", as: :login
@@ -25,7 +26,12 @@ end
 
 #        Prefix Verb   URI Pattern                          Controller#Action
 #          root GET    /                                    cities#index
-#         users POST   /users(.:format)                     users#create
+#         users GET    /users(.:format)                     users#index
+#               POST   /users(.:format)                     users#create
+#     edit_user GET    /users/:id/edit(.:format)            users#edit
+#          user PATCH  /users/:id(.:format)                 users#update
+#               PUT    /users/:id(.:format)                 users#update
+#               DELETE /users/:id(.:format)                 users#destroy
 #        signup GET    /signup(.:format)                    users#new
 #       profile GET    /profile(.:format)                   users#show
 #      sessions POST   /sessions(.:format)                  sessions#create
@@ -42,6 +48,7 @@ end
 #        cities GET    /cities(.:format)                    cities#index
 #          city GET    /cities/:id(.:format)                cities#show
 #               GET    /:id(.:format)                       cities#show
+#             GET    /:id(.:format)                       cities#show
 
 
 
