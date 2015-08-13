@@ -31,6 +31,7 @@
 								</div>
 								<div class="panel-body">
 									<p>Title: <%= post.title %> <br>Body: <%= post.body %> <br></p>
+									<%= image_tag current_user.avatar.url(:thumb) %>
 								</div>
 								<% if post.user.id == session[:user_id] %>
 								<div class="panel-footer">
