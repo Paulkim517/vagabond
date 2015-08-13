@@ -16,6 +16,10 @@ class CitiesController < ApplicationController
   	f.html {render :show}
   	f.json {render :json => @city}
  	  end
-  	
   end
+
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+  	
 end

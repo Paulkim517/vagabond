@@ -13,6 +13,14 @@
 		    <%= f.text_area :body, class: "form-control", placeholder: "Enter your advice here"%>
 		  </div>
 		</div>
+
+		<div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
+
 			<%= f.submit "Submit", class: "btn btn-primary pull-right", id: "submit-button" %>  
  	<% end %>
 </div>
+
