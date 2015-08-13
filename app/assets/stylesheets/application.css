@@ -15,7 +15,7 @@
  */
 
  body {
- 	margin-top: 53px;
+ 	margin-top: 51px;
  	font-family: 'Open Sans', sans-serif;
  	padding: 0;
  }
@@ -63,8 +63,14 @@ margin-right: 5px;
 }
 
 .navbar-thumb {
-	height: 22px;
-	width: 22px;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	position: absolute;
+	display: inline;
+	margin-top: -5px;
+	margin-left: -30px;
+	/*top: 0px;*/
 }
 
 #profile-header {
@@ -79,7 +85,7 @@ margin-right: 5px;
 	padding: 0;
 	margin: 0;
 	/*margin-top: -57px;*/
-	height: calc(100vh - 57px);
+	height: calc(100vh - 55px);
 }
 
 
