@@ -11,8 +11,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts "THESE ARE THE PARAMS"
-    puts params
     # redirect user if already logged in
     if current_user
       redirect_to profile_path
@@ -30,12 +28,28 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find(params[:id])
+    if current_user
+      flash[:notice] = "Successfully updated profile!"
+      user.update_attributes(user_params)
+      redirect_to profile_path
+    else
+      flash[:error] = user.errors.full_messages.join(', ')
+      redirect_to edit_profile_path
+    end
   end
 
   def edit
+    @user = User.find(current_user)
   end
 
   def destroy
+    @user = User.find(params[:id])
+    if current_user
+      flash[:error] = "Successfully deleted profile!"
+      user.destroy
+      redirect_to cities_path
+    end
   end
 
   def index

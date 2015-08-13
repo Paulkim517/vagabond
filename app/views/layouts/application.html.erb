@@ -22,15 +22,24 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand" href="/">Vagabond Home</a>
-			<% if logged_in? %>
-				<a class="navbar-brand navbar-right" href="/profile">Profile</a>
-			<% end %>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-right">
 			<% if logged_in? %>
 				<a class="btn navbar-btn navbar-right btn-warning" href="/logout">Log out</a>
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+			          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cities<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="/san-francisco">San Francisco</a></li>
+			            <li><a href="/los-angeles">Los Angeles</a></li>
+			            <li><a href="/boston">Boston</a></li>
+			            <li><a href="/austin">Austin</a></li>
+			            <li><a href="/new-orleans">New Orleans</a></li>
+			          </ul>
+			        </li>
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a class="navbar-header">Welcome, <%= current_user.username %></a></li>
+					<li><a class="navbar-header" href="/profile"><%= image_tag current_user.avatar.url(:thumb), class: "navbar-thumb" %>&nbsp&nbsp<%= current_user.username %></a></li>
 				</ul>
 			<% else %>
 				<a class="btn navbar-btn navbar-right btn-default" href="/login">Login</a>
