@@ -1,6 +1,6 @@
 
 <div class="container" id="container_form">
-	<%= form_for :post, url: "/cities/#{@city.id}/posts", :html => {:class => "form-horizontal center"} do |f| %>
+	<%= form_for :post, url: "/cities/#{@city.id}/posts", :html => {:class => "form-horizontal center", :id => "post_new"} do |f| %>
 		<div class="form-group">
 			<%= f.label :title, "Title:", class: "col-sm-2 control-label" %>
 			<div class="col-sm-8">
