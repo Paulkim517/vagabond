@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-
+  
+  resources :tag
+  
   root "cities#index"
+
+
 
   resources :users, only: [:create, :update]
   get "/signup", to: "users#new", as: :signup
