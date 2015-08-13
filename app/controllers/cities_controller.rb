@@ -1,7 +1,12 @@
 class CitiesController < ApplicationController
   def index
   	@cities = City.all
-  	render :index
+  	
+  	respond_to do |f| 
+  	f.html {render :index}
+  	f.json {render :json => @city}
+ 	  end
+
   end
 
   def show
