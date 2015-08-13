@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'acts-as-taggable-on'
 #aws
 gem 'aws-sdk', '~> 1.6'
 

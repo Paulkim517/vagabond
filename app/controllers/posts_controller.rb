@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   
   before_filter :authorize, except: [:index, :show]
 
+  @tags = Post.tag_counts_on(:tags)
+
   def index
     @posts = Post.all
     render :index
