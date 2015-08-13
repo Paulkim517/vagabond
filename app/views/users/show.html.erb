@@ -1,12 +1,8 @@
-<h1><%= current_user.email %></h1>
-<p></p>
-<div class="jumbotron">
-	<div class="text-center">
-		<h1>Your Profile</h1>
-		<div>
-			<p>Welcome back <%= current_user.username %></p>
-			<%= image_tag current_user.avatar.url(:medium) %>		
-		</div>
+<div class="text-center">
+	<h1>Your Profile</h1>
+	<div>
+		<p>Welcome back <%= current_user.username %></p>
+		<%= image_tag current_user.avatar.url(:medium) %>		
 	</div>
 </div>
 <div class="container">
