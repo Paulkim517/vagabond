@@ -17,11 +17,12 @@
  body {
  	margin-top: 53px;
  	font-family: 'Open Sans', sans-serif;
+ 	padding: 0;
  }
 
 a.btn {
 margin-left:10px;
-margin-right: 10px;
+margin-right: 5px;
 }
 
 .thumbnail {
@@ -72,6 +73,13 @@ margin-right: 10px;
 
 #edit-profile-button {
 	margin-top: 20px;
+}
+
+#map-container {
+	padding: 0;
+	margin: 0;
+	/*margin-top: -57px;*/
+	height: calc(100vh - 57px);
 }
 
 
