@@ -1,0 +1,26 @@
+<h1>Tag#show</h1>
+<p>Find me in app/views/tag/show.html.erb</p>
+
+
+
+
+
+<h1>Posts Tagged as <%= @tag.name %></h1>
+
+<% if @posts.count > 0 %>
+
+  <ul>
+
+  <% @posts.each do |post| %>
+
+    <li><%= link_to post.title, post_path(post) %></li>
+
+  <% end %>
+
+  </ul>
+
+<% else %>
+
+  <p>This tag is not associated with any posts.</p>
+
+<% end %>

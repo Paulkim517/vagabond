@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   
   before_filter :authorize, except: [:index, :show]
 
+  @tags = Post.tag_counts_on(:tags)
+
   def index
     @posts = Post.all
     render :index
@@ -61,7 +63,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :tag_list)
     end
   
 end
