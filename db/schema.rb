@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813221022) do
+ActiveRecord::Schema.define(version: 20150814003130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20150813221022) do
 
   add_index "cities", ["slug"], name: "index_cities_on_slug", unique: true, using: :btree
 
+  create_table "comments", force: :cascade do |t|
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "body"
@@ -33,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150813221022) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "city_id"
+    t.string   "comments"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -66,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150813221022) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "comments"
   end
 
 end
