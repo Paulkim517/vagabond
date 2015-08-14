@@ -1,3 +1,28 @@
 <h1>Edit Post</h1>
 
-<%= render 'form' %>
+<div class="container" id="container_form">
+	<%= form_for @post, :html => {:class => "form-horizontal center", :id => "post_new"} do |f| %>
+		<div class="form-group">
+			<%= f.label :title, "Title:", class: "col-sm-2 control-label" %>
+			<div class="col-sm-8">
+		    <%= f.text_field :title, class: "form-control", placeholder: "Enter title" %>
+		  </div>
+		</div>
+		<div class="form-group">
+		  <%= f.label :body, "Body:", class: "col-sm-2 control-label" %>
+		  <div class="col-sm-8">
+		    <%= f.text_area :body, class: "form-control", placeholder: "Enter your advice here"%>
+		  </div>
+		</div>
+
+		<div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+</div>
+
+
+			<%= f.submit "Submit", class: "btn btn-primary pull-right", id: "submit-button" %>  
+ 	<% end %>
+</div>
+
+
